@@ -1,19 +1,22 @@
 <template>
 <div class="hello">
   <Header-component></Header-component>
-  <Header-swiper></Header-swiper>
+  <Home-swiper></Home-swiper>
+  <nav-list></nav-list>
 </div>
 </template>
 
 <script>
 import HeaderComponent from './components/HeaderComponent'
-import HeaderSwiper from './components/HeaderSwiper'
+import HomeSwiper from './components/HomeSwiper'
+import NavList from './components/NavList'
 
 export default {
   name: 'Home',
   components: {
   	HeaderComponent,
-  	HeaderSwiper
+  	HomeSwiper,
+  	NavList
   }
 }
 </script>
