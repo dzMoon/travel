@@ -12,10 +12,9 @@
 </template>
 
 <script type="text/">
-	 
 export default {
-  name: 'Home'
-}
+	name: 'HeaderComponent'
+}	 
 </script>
 <style lang='stylus' scoped>
 	@import '~styles/variables.styl'

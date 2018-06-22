@@ -1,18 +1,22 @@
 <template>
 <div class="hello">
-  <HeaderComponent></HeaderComponent>
+  <Header-component></Header-component>
+  <Header-swiper></Header-swiper>
 </div>
 </template>
 
 <script>
 import HeaderComponent from './components/HeaderComponent'
+import HeaderSwiper from './components/HeaderSwiper'
+
 export default {
   name: 'Home',
   components: {
-  	HeaderComponent
+  	HeaderComponent,
+  	HeaderSwiper
   }
 }
 </script>
-<style scoped>
+<style lang='stylus' scoped>
 
 </style>
