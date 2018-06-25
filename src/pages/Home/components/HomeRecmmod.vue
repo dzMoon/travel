@@ -2,13 +2,13 @@
   <div>
     <h1>热门推荐</h1>
     <ul>
-      <li class="item" v-for="item in recmmods" :key="item.id">
+      <li class="item" v-for="item in recommendList" :key="item.id">
         <div class="img-box">
           <img :src="item.imgUrl">
         </div>
         <div class="item-desc">
           <p>{{item.title}}</p>
-          <p class="msg">{{item.msg}}</p>
+          <p class="msg">{{item.desc}}</p>
           <button>查看详情</button>
         </div>
       </li>
@@ -19,31 +19,8 @@
 <script type='text/'>
 export default {
   name: 'HomeRecmmod',
-  data () {
-    return {
-      recmmods:[{
-        id: "001",
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1609/7a/7ae8ee7831836095a3.water.jpg_200x200_36727f69.jpg",
-        title: "金海湖风景区",
-        msg: "9点半来到动物园，已经游客不少，换票入园很方便。进门取了份地图开始了野生动物园之旅。进大门靠右面游行，先来到猴馆，出"
-      },{
-        id: "002",
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1508/a5/4003f9dd7bebf61eccbf64046e26d487.water.jpg_200x200_7690e4cd.jpg",
-        title: "北京欢乐谷",
-        msg: "9点半来到动物园，已经游客不少，换票入园很方便。进门取了份地图开始了野生动物园之旅。进大门靠右面游行，先来到猴馆，出"
-      },{
-        id: "003",
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1804/c8/c88bb5e69c9a9c5ea3.img.jpg_200x200_740720ff.jpg",
-        title: "古北水镇",
-        msg: "9点半来到动物园，已经游客不少，换票入园很方便。进门取了份地图开始了野生动物园之旅。进大门靠右面游行，先来到猴馆，出"
-      },{
-        id: "004",
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_200x200_0938a8f2.jpg",
-        title: "北京野生动物园",
-        msg: "9点半来到动物园，已经游客不少，换票入园很方便。进门取了份地图开始了野生动物园之旅。进大门靠右面游行，先来到猴馆，出"
-      }]
-
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>
