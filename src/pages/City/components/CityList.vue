@@ -14,7 +14,11 @@
 				</div>
 			</div>
 			<div class="area">
-				<div class="list-area" v-for="(city,index) of this.cities" :key="index">
+				<div class="list-area" 
+					v-for="(city,index) of this.cities" 
+					:key="index"
+					:ref="index"
+				>
 					<h1>{{index}}</h1>
 					<p v-for="name in city" :key="name.id">{{name.name}}</p>
 				</div>
@@ -24,18 +28,28 @@
 	</div>
 </template>
 
-<script type="text/">
+<script >
 import BScroll from 'better-scroll'
 export default{
 	name: 'CityList',
 	props: {
 		hotCities:Array,
 		cities: Object,
-		city: String
+		city: String,
+		letter: String
 	},
 	mounted () {
-		const scroll = new BScroll(this.$refs.wrapper)
-		this.$refs.wrapper.style.height = (document.documentElement.clientHeight + 92) + "px"
+		this.$refs.wrapper.style.height = (document.documentElement.clientHeight - 91) + "px"
+		this.scroll = new BScroll(this.$refs.wrapper)
+		
+	},
+	watch: {
+		letter () {
+			if(this.letter){
+				const element = this.$refs[this.letter][0]
+				this.scroll.scrollToElement(element)
+			}
+		}
 	}
 }	
 </script>
@@ -50,10 +64,12 @@ export default{
 		position: fixed
 		height: 100%
 		box-sizing: border-box
-		top: 92px
+		top: 91px
 		overflow: hidden
 		.container
 			width: 100%
+			position: absolute
+			top: 0
 			.area
 				.h1
 					background: #eee

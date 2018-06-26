@@ -2,8 +2,16 @@
 	<div class="city-wrapper">
 		<City-header></City-header>
 		<City-search></City-search>
-		<City-list :hotCities="hotCities" :cities="cities" :city="city"></City-list>
-		<City-nav :cities="cities"></City-nav>
+		<City-list 
+			:hotCities="hotCities" 
+			:cities="cities" 
+			:city="city"
+			:letter = "letter"
+		></City-list>
+		<City-nav 
+			:cities="cities"
+			@change="getLetter"
+		></City-nav>
 	</div>
 </template>
 
@@ -26,7 +34,8 @@ export default {
 		return {
 			hotCities:[],
 			cities:{},
-			city:""
+			city:"",
+			letter:""
 		}
 	},
 	mounted () {
@@ -37,6 +46,11 @@ export default {
 			that.cities = data.cities
 			that.city = data.city
 		})
+	},
+	methods: {
+		getLetter (key) {
+			this.letter = key
+		}
 	}
 }	
 </script>
