@@ -7,7 +7,9 @@
 		<span class="iconfont">&#xe60b;</span>
 		<input type="" name="" placeholder="输入城市/景点/游玩主题">
 	</div>
-	<div class="header-position">{{this.city}}<span class="iconfont">&#xe791;</span> </div>		
+	<router-link to='/city'>
+		<div class="header-position">{{this.city}}<span class="iconfont">&#xe791;</span> </div>		
+	</router-link>	
 </div>
 </template>
 
@@ -34,6 +36,7 @@ export default {
 		.header-position
 			float:right
 			width: 62px
+			color: #fff
 			span
 				vertical-align: bottom
 		.header-input
