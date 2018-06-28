@@ -12,14 +12,17 @@
         </div>
       </div>
     </div>
-    <Gallary
-      :imgs = "this.gallaryImgs" 
-      v-show="this.toggle"
-    ></Gallary>
+  	<Fade-animation>
+	    <Gallary
+	      :imgs = "this.gallaryImgs" 
+	      v-show="this.toggle"
+	    ></Gallary>
+    </Fade-animation>
   </div>
 </template>
 <script>
 import Gallary from 'common/gallary/Gallary.vue'
+import FadeAnimation from 'common/fade/FadeAnimation'
 import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'DetailBanner',
@@ -32,7 +35,8 @@ export default {
     ...mapState(['toggle'])
   },
   components: {
-    Gallary
+    Gallary,
+    FadeAnimation
   },
   methods: {
     handleGallaryClick () {
