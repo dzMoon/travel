@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script type='text/'>
+<script>
 export default {
   name: 'HomeWeek',
   props: {

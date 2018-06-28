@@ -13,8 +13,7 @@
 		></City-nav>
 	</div>
 </template>
-
-<script type="text/">
+<script>
 import axios from 'axios'	
 import CityHeader from './components/CityHeader'
 import CitySearch from './components/CitySearch'
@@ -51,9 +50,7 @@ export default {
 	}
 }	
 </script>
-
-
-<style lang='stylus' scoped>
+<style lang="stylus" scoped>
 	@import '~styles/variables.styl'
 	body,html
 		height: 100%

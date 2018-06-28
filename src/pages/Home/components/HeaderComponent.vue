@@ -13,7 +13,7 @@
 </div>
 </template>
 
-<script type="text/">
+<script>
 import { mapState } from 'vuex'
 export default {
 	name: 'HeaderComponent',
