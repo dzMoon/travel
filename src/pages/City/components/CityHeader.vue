@@ -28,7 +28,7 @@ export default{
 		position: fixed
 		top:0
 		text-align: center
-		z-index: 1
+		z-index: 55
 		.back
 			position: absolute
 			width: 32px

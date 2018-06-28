@@ -1,6 +1,6 @@
 <template>
 <div class="hello">
-  <Header-component :city="city"></Header-component>
+  <Header-component></Header-component>
   <Home-swiper :swiperList = "swiperList"></Home-swiper>
   <nav-list :iconList="iconList"></nav-list>
   <Home-recmmod :recommendList="recommendList"></Home-recmmod>
@@ -21,8 +21,7 @@ export default {
   		swiperList: [],
   		iconList:[],
   		weekendList: [],
-  		recommendList: [],
-  		city:""
+  		recommendList: []
   	}
   },		
   name: 'Home',
@@ -46,7 +45,6 @@ export default {
   				that.iconList = data.iconList
   				that.recommendList = data.recommendList
   				that.weekendList = data.weekendList
-  				that.city = data.city
   			})
   	}
   }

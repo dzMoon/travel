@@ -1,11 +1,10 @@
 <template>
 	<div class="city-wrapper">
 		<City-header></City-header>
-		<City-search></City-search>
+		<City-search :cities="cities"></City-search>
 		<City-list 
 			:hotCities="hotCities" 
 			:cities="cities" 
-			:city="city"
 			:letter = "letter"
 		></City-list>
 		<City-nav 
@@ -34,7 +33,6 @@ export default {
 		return {
 			hotCities:[],
 			cities:{},
-			city:"",
 			letter:""
 		}
 	},
@@ -44,7 +42,6 @@ export default {
 			const data = res.data.data
 			that.hotCities = data.hotCities
 			that.cities = data.cities
-			that.city = data.city
 		})
 	},
 	methods: {

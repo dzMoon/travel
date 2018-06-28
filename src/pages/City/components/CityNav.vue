@@ -19,7 +19,8 @@ export default{
 	},
 	data () {
 		return {
-			touchFlag: false
+			touchFlag: false,
+			timer: null
 		}
 	},
 	computed: {
@@ -31,6 +32,9 @@ export default{
 			return list
 		}
 	},
+	updated () {
+		this.startY = parseFloat(this.$refs["A"][0].offsetTop)
+	},
 	methods: {
 		getLetter (key) {
 			this.$emit("change",key)
@@ -40,12 +44,16 @@ export default{
 		},
 		handleTouchMove (e) {
 			if(this.touchFlag){
-				const startY = parseFloat(this.$refs["A"][0].offsetTop)
-				const touchY = e.touches[0].clientY
-				const index = Math.floor((touchY - startY)/25)
-				if(index >= 0 && index < this.list.length ) {
-					this.$emit("change",this.list[index])
+				if(this.timer){
+					clearTimeout(this.timer)
 				}
+				this.timer = setTimeout( () => {
+					const touchY = e.touches[0].clientY
+					const index = Math.floor((touchY - this.startY)/25)
+					if(index >= 0 && index < this.list.length ) {
+						this.$emit("change",this.list[index])
+					}
+				},16)
 			}
 		},
 		handleTouchEnd () {
