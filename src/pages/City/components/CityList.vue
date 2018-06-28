@@ -32,7 +32,7 @@
 	</div>
 </template>
 
-<script >
+<script type="text/">
 import BScroll from 'better-scroll'
 import { mapState, mapMutations } from 'vuex'
 export default{
@@ -63,7 +63,7 @@ export default{
 	methods: {
 		changeCity (city) {
 			this.changeCity(city)
-			this.$router.push("/")
+      		this.$router.push('/')
 		},
 		...mapMutations(['changeCity'])
 	}
