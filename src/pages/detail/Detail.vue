@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="detail">
+    <Detail-header></Detail-header>
     <detail-banner 
       :sightName="sightName"
       :bannerImg="bannerImg"
@@ -10,11 +11,13 @@
 
 <script>
 import DetailBanner from './components/Banner'
+import DetailHeader from './components/Header'
 import axios from "axios"
 export default {
   name: 'Detail',
   components: {
-    DetailBanner
+    DetailBanner,
+    DetailHeader
   },
   data () {
   	return {
@@ -38,4 +41,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.detail
+  height: 1000px
 </style>

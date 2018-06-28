@@ -1,9 +1,6 @@
 <template>
   <div>
     <div class="banner" @click="handleGallaryClick">
-      <router-link to="/">
-        <span class="iconfont">&#xe602;</span>
-      </router-link> 
       <img class="banner-img" :src="this.bannerImg"/>
       <div class="banner-info">
         <div class="banner-tittle">
