@@ -15,29 +15,21 @@
 export default {
   name: 'NavList',
   props: {
-    iconList:Array
+    iconList: Array
   },
   data () {
     return {
-      swiperOption:{
+      swiperOption: {
         pagination: '.swiper-pagination'
       }
     }
   },
   computed: {
     pages () {
-      const pages = [];
-      // const index = 0;
-      // const lll = this.lists
-      // if(this.lists.length > 8){
-        
-      // }
+      const pages = []
       this.iconList.forEach((item, index) => {
-
-
-
-        const page = Math.floor(index/8)
-        if(!pages[page]){
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
           pages[page] = []
         }
         pages[page].push(item)

@@ -41,7 +41,7 @@ export default {
       img
         width: 100%
     .item-desc
-      min-width: 0    
+      min-width: 0
       padding: 0px 10px 10px 10px
       text-align: left
       p

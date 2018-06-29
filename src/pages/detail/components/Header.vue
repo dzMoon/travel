@@ -36,9 +36,9 @@ export default {
     handleScroll () {
       const top = document.documentElement.scrollTop
       if (top > 60) {
-          this.opacityStyle.opacity = top / 140 > 1? 1: top / 140
-          this.showAbs = false
-      }else{
+        this.opacityStyle.opacity = top / 140 > 1 ? 1 : top / 140
+        this.showAbs = false
+      } else {
         this.showAbs = true
       }
     }

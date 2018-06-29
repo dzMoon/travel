@@ -3,8 +3,8 @@
     <h1>热门推荐</h1>
     <ul>
       <router-link tag="li"
-        class="item" 
-        v-for="item in recommendList" 
+        class="item"
+        v-for="item in recommendList"
         :key="item.id"
         :to="'/detail/' + item.id"
       >
@@ -49,9 +49,9 @@ export default {
       flex-shrink: 0
       img
         width: 100%
-        height: 100%  
+        height: 100%
     .item-desc
-      min-width: 0    
+      min-width: 0
       padding-left: 10px
       text-align: left
       p
@@ -68,5 +68,4 @@ export default {
         color: #fff
         border:none
         outline:none
-          
 </style>

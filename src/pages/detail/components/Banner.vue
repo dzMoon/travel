@@ -12,11 +12,11 @@
         </div>
       </div>
     </div>
-  	<Fade-animation>
-	    <Gallary
-	      :imgs = "this.gallaryImgs" 
-	      v-show="this.toggle"
-	    ></Gallary>
+    <Fade-animation>
+      <Gallary
+        :imgs = "this.gallaryImgs"
+        v-show="this.toggle"
+      ></Gallary>
     </Fade-animation>
   </div>
 </template>
@@ -27,9 +27,9 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'DetailBanner',
   props: {
-      sightName: String,
-      bannerImg: String,
-      gallaryImgs: Array
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
   },
   computed: {
     ...mapState(['toggle'])
@@ -85,7 +85,7 @@ export default {
           font-size: 12px
     a
       .iconfont
-        color: #fff      
+        color: #fff
         position:absolute
         left: 10px
         top: 10px

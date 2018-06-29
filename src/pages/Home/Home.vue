@@ -18,45 +18,45 @@ import axios from 'axios'
 import { mapState } from 'vuex'
 export default {
   data () {
-  	return {
-  		swiperList: [],
-  		iconList:[],
-  		weekendList: [],
-  		recommendList: [],
-      selectedCity:""
-  	}
-  },		
+    return {
+      swiperList: [],
+      iconList: [],
+      weekendList: [],
+      recommendList: [],
+      selectedCity: ''
+    }
+  },
   name: 'Home',
   components: {
-  	HeaderComponent,
-  	HomeSwiper,
-  	NavList,
-  	HomeRecmmod,
-  	HomeWeek
+    HeaderComponent,
+    HomeSwiper,
+    NavList,
+    HomeRecmmod,
+    HomeWeek
   },
   computed: {
     ...mapState(['city'])
   },
   methods: {
-  	getInfo () {
-  		var that = this
-  		axios.get("/api/index.json?city="+ this.city )
-  			.then(function(res){
-				var data = res.data.data
-  				that.swiperList = data.swiperList
-  				that.iconList = data.iconList
-  				that.recommendList = data.recommendList
-  				that.weekendList = data.weekendList
-  			})
-      this.selectedCity = this.city  
-  	}
+    getInfo () {
+      var that = this
+      axios.get('/api/index.json?city=' + this.city)
+        .then((res) => {
+          var data = res.data.data
+          that.swiperList = data.swiperList
+          that.iconList = data.iconList
+          that.recommendList = data.recommendList
+          that.weekendList = data.weekendList
+        })
+      this.selectedCity = this.city
+    }
   },
-   mounted () {
+  mounted () {
     this.getInfo()
   },
   activated () {
-    if(this.selectedCity !== this.city) {
-      this.selectedCity == this.city
+    if (this.selectedCity !== this.city) {
+      this.selectedCity = this.city
       this.getInfo()
     }
   }

@@ -1,54 +1,53 @@
 <template>
-	<div class="list" ref='wrapper'>
-		<div class="container">
-			<div class="area">
-				<div class="h1">当前城市</div>
-				<div class="button-wraper">
-					<button>{{this.curCity}}</button>
-				</div>
-			</div>
-			<div class="area">
-				<div class="h1">热门城市</div>
-				<div class="button-wraper">
-					<button v-for="hotCity in this.hotCities" :key="hotCity.id" @click="changeCity(hotCity.name)">{{hotCity.name}}</button>
-				</div>
-			</div>
-			<div class="area">
-				<div class="list-area" 
-					v-for="(city,index) of this.cities" 
-					:key="index"
-					:ref="index"
-
-				>
-					<h1>{{index}}</h1>
-					<p v-for="name in city" 
-						:key="name.id"
-						@click="changeCity(name.name)"
-					>{{name.name}}</p>
-				</div>
-			</div>
-		</div>
-		
-	</div>
+  <div class="list" ref='wrapper'>
+    <div class="container">
+      <div class="area">
+        <div class="h1">当前城市</div>
+        <div class="button-wraper">
+          <button>{{this.curCity}}</button>
+        </div>
+      </div>
+      <div class="area">
+        <div class="h1">热门城市</div>
+        <div class="button-wraper">
+          <button v-for="hotCity in this.hotCities" :key="hotCity.id" @click="changeCity(hotCity.name)">{{hotCity.name}}</button>
+        </div>
+      </div>
+      <div class="area">
+        <div class="list-area"
+          v-for="(city,index) of this.cities"
+          :key="index"
+          :ref="index"
+        >
+          <h1>{{index}}</h1>
+          <p v-for="name in city"
+            :key="name.id"
+            @click="changeCity(name.name)"
+          >{{name.name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
+/* eslint-disable indent,no-tabs,no-mixed-spaces-and-tabs */
 import BScroll from 'better-scroll'
 import { mapState, mapMutations } from 'vuex'
 export default{
+// eslint-disable-next-line no-tabs
 	name: 'CityList',
 	props: {
-		hotCities:Array,
+		hotCities: Array,
 		cities: Object,
 		letter: String
 	},
 	mounted () {
-		this.$refs.wrapper.style.height = (document.documentElement.clientHeight - 91) + "px"
+		this.$refs.wrapper.style.height = (document.documentElement.clientHeight - 91) + 'px'
 		this.scroll = new BScroll(this.$refs.wrapper)
-		
 	},
 	watch: {
 		letter () {
-			if(this.letter){
+			if (this.letter) {
 				const element = this.$refs[this.letter][0]
 				this.scroll.scrollToElement(element)
 			}
@@ -66,9 +65,8 @@ export default{
 		},
 		...mapMutations(['changeCity'])
 	}
-}	
+}
 </script>
-
 
 <style lang='stylus' scoped>
 	@import '~styles/variables.styl'
@@ -116,10 +114,10 @@ export default{
 						background: #eee
 						padding-left: 10px
 						box-sizing: border-box
-						line-height: 2.4	   
-						border-bottom: 1px solid #ddd 
+						line-height: 2.4
+						border-bottom: 1px solid #ddd
 					p
-						padding-left: 10px	
+						padding-left: 10px
 						line-height: 2
-					
+
 </style>
